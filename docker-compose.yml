@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  backend:
+      image: 'leichtathletik-vereinsdatenbank-controller:latest'
+      build:
+        context: ./backend-leichtathletik-vereinsdatenbank/
+      ports:
+        - 8080:8080
+      container_name: backend
+  frontend:
+      build:
+        context: ./frontend/
+      ports:
+        - 4200:4200
+      container_name: frontend
